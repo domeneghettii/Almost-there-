@@ -1,10 +1,12 @@
 import React from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
     return (
         <div className={styles.container}>
-            <img className={styles.image} src="/images/maiko.png" alt="Maiko Xikixiki" />
+            <Image className={styles.image} src="/images/maiko.png" alt="Maiko Xikixiki" width={100} height={100} />
             <h1 className={styles.title}> Maiko Xikixiki Bahia</h1>
             <div className={styles.description}>
                 <p>Tá perdido no código? Relaxa e vem de Maiko, que vamos te mostrar a usar:</p>
@@ -22,9 +24,9 @@ export default function Home() {
                     <li>Skeleton</li>
                 </ul>
             </div>
-            <a href="/countries">
+            <Link href="/countries" prefetch={true}>
                 <button className={styles.button}>Acessar Países</button>
-            </a>
+            </Link>
         </div>
     );
 }
